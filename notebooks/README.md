@@ -125,3 +125,29 @@ Interpretation: Cluster 1 represents users experiencing good network quality. Th
 
 Cluster 2:
 Interpretation: Cluster 2 represents users with the highest throughput, indicating very high-speed network connections. However, this group faces significant retransmission issues, which could impact the overall network experience despite the high speeds. They experience moderate round-trip times.
+
+### Executing user_satisfaction_analysis
+Assign Engagement and Experience Scores
+Compute the engagement score as the Euclidean distance between the user data point and the less engaged cluster.
+
+Compute the experience score as the Euclidean distance between the user data point and the worst experience cluster.
+
+Compute Satisfaction Score
+Consider the average of both engagement and experience scores as the satisfaction score.
+
+Report the top 10 satisfied customers.
+
+Build a Regression Model
+Build a regression model to predict the satisfaction score based on engagement and experience metrics.
+
+K-Means Clustering on Engagement and Experience Scores
+Perform k-means clustering with k=2 on the engagement and experience scores.
+
+Aggregate Average Scores Per Cluster
+Aggregate the average satisfaction and experience scores per cluster.
+
+Export Final Table to PostgreSQL Database
+Export the final table containing all user IDs, engagement, experience, and satisfaction scores to a local PostgreSQL database.
+
+The following image shows the screenshot of the table in the database
+![Example Image](postgres_data.png)

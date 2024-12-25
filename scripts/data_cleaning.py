@@ -5,9 +5,9 @@ import psycopg2
 def get_xdr_data():
     # PostgreSQL connection parameters
     conn_params = {
-        'dbname': 'postgres',
-        'user': 'postgres',
-        'password': 'postgres',
+        'dbname': 'database name',
+        'user': 'username',
+        'password': 'password',
         'host': 'localhost',
         'port': '5432'
     }
