@@ -18,6 +18,7 @@ You can install the required libraries using pip:
 
 ```bash
 pip install pandas numpy matplotlib seaborn sqlalchemy plotly scikit-learn
+```
 
 Setup and Data Import
 Connect to Database: Establish a connection to your database using SQLAlchemy. Ensure to configure the connection parameters (e.g., database type, user, password, host, database name).
@@ -31,7 +32,7 @@ Get an overview of the dataset, including the number of rows and columns, and da
 
 Summarize the numerical and categorical variables to understand their distributions and key statistics.
 
-Executing user_overview_analysis.ipynb
+### Executing user_overview_analysis
 
 
 Variable Transformations
@@ -71,7 +72,7 @@ Perform PCA: Conduct Principal Component Analysis to reduce the dimensionality o
 
 Interpret Results: Analyze the explained variance ratio to determine the proportion of variance captured by each principal component. Visualize the principal components to understand the clustering and spread of data points.
 
-Executing user_engagement_analysis.ipynb
+### Executing user_engagement_analysis
 
 Advanced Customer Engagement Analysis
  Aggregate Metrics per Customer
@@ -95,3 +96,32 @@ Determine Optimal Number of Clusters (k)
 Elbow Method: Use the elbow method to determine the optimal number of clusters (k) by plotting the sum of squared distances (SSE) against different values of k. Identify the "elbow point" where the SSE starts to decrease more slowly, indicating the optimal number of clusters.
 
 The optimal number of clusters for this data was found to be k=5 which is at the elbow point, where the SSE levels off which in turn ensures the clusters are compact and meaningful.
+
+### Executing user_experience_analysis
+
+Aggregate Information Per Customer
+Handle missing values by replacing them with the mean or mode.
+
+Aggregate the data per customer using the mean for continuous variables and the mode for categorical variables (handset type).
+
+Compute & List Top, Bottom, and Most Frequent Values
+Use pandas functions to list the nlargest, nsmallest, and value_counts for the respective metrics.
+
+Compute & Report Distributions
+Group the aggregated data by handset type and compute the mean for average throughput and TCP retransmission.
+
+Visualize the distributions using Plotly for better readability and interaction.
+
+K-Means Clustering
+Standardize the features (average TCP retransmission, average RTT, and average throughput).
+
+Apply k-means clustering to segment the users into three groups.
+
+Cluster 0:
+Interpretation: Cluster 0 represents users experiencing moderate network quality. They have stable connections with lower throughput and moderate round-trip times. This group might consist of users who have consistent but not particularly fast internet experiences.
+
+Cluster 1:
+Interpretation: Cluster 1 represents users experiencing good network quality. They have high throughput and low latency, indicating a strong and efficient connection. However, they might face some retransmission issues, which could occasionally disrupt their internet experience.
+
+Cluster 2:
+Interpretation: Cluster 2 represents users with the highest throughput, indicating very high-speed network connections. However, this group faces significant retransmission issues, which could impact the overall network experience despite the high speeds. They experience moderate round-trip times.
