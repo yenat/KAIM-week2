@@ -31,3 +31,21 @@ git clone https://github.com/yourusername/user-engagement-analysis.git
 Open the Jupyter Notebook containing the analysis.
 
 Execute the cells step-by-step to perform data preprocessing, analysis, and export operations.
+
+
+## Using Docker
+
+### Pull the Docker Image 
+```sh
+docker pull yenat21/learning:latest
+
+```
+
+### Run the Docker Container
+```sh
+docker run -p 8888:8888 yenat21/learning:latest
+```
+
+### Access Jupyter Notebook
+Open your web browser and go to `http://localhost:8888` to access Jupyter Notebook.
+```
